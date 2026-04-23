@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+/* Easy-to-edit tokens for the portfolio mood. */
+:root {
+  --background: #f7fffd;
+  --foreground: #24405f;
+  --muted: #64748b;
+  --mint: #c8f7ee;
+  --aqua: #d8f1ff;
+  --sky: #dfe4ff;
+  --peach: #ffe7db;
+  --rose: #ffe8f5;
+  --border: rgba(255, 255, 255, 0.78);
+  --panel: rgba(255, 255, 255, 0.74);
+  --panel-strong: rgba(255, 255, 255, 0.88);
+  --shadow: 0 24px 80px rgba(96, 128, 163, 0.16);
+  --shadow-soft: 0 16px 45px rgba(102, 131, 165, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(200, 247, 238, 0.95), transparent 30%),
+    radial-gradient(circle at top right, rgba(216, 241, 255, 0.82), transparent 26%),
+    radial-gradient(circle at 30% 80%, rgba(255, 232, 245, 0.76), transparent 28%),
+    linear-gradient(180deg, #fbffff 0%, #f6fbff 48%, #fefcff 100%);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.95) 0, transparent 12rem),
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.65) 0, transparent 10rem),
+    radial-gradient(circle at 50% 60%, rgba(201, 238, 255, 0.2) 0, transparent 18rem);
+  filter: blur(10px);
+}
+
+body::after {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.32) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.24) 1px, transparent 1px);
+  background-size: 110px 110px;
+  mask-image: radial-gradient(circle at center, black 18%, transparent 78%);
+  opacity: 0.35;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(130, 224, 211, 0.48);
+  color: #12314d;
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.soft-panel {
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.68)),
+    var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(20px);
+}
+
+.soft-panel-strong {
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.82)),
+    var(--panel-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px);
+}
+
+.soft-tag {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: var(--shadow-soft);
+}
+
+.lift-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.lift-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(92, 132, 163, 0.2);
+}
+
+.pretty-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(122, 175, 211, 0.48) transparent;
+}
+
+.pretty-scroll::-webkit-scrollbar {
+  height: 9px;
+}
+
+.pretty-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(122, 175, 211, 0.4);
+}
+
+.pretty-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.floating-a {
+  animation: floatA 7s ease-in-out infinite;
+}
+
+.floating-b {
+  animation: floatB 8s ease-in-out infinite;
+}
+
+.floating-c {
+  animation: floatC 9s ease-in-out infinite;
+}
+
+@keyframes floatA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes floatB {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(8px, -12px, 0);
+  }
+}
+
+@keyframes floatC {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-8px, -14px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
