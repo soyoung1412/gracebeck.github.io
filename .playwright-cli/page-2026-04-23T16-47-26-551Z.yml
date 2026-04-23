@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "GB Grace Beck Grace Beck" [ref=e3] [cursor=pointer]:
+      - /url: "#home"
+      - generic [ref=e4]: GB
+      - generic [ref=e5]: Grace Beck Grace Beck
+    - navigation "Primary" [ref=e6]:
+      - link "Home" [ref=e7] [cursor=pointer]:
+        - /url: "#home"
+      - link "Posters" [ref=e8] [cursor=pointer]:
+        - /url: "#posters"
+      - link "Film" [ref=e9] [cursor=pointer]:
+        - /url: "#film"
+      - link "Photography" [ref=e10] [cursor=pointer]:
+        - /url: "#photography"
+      - link "About" [ref=e11] [cursor=pointer]:
+        - /url: "#about"
+      - link "Contact" [ref=e12] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - img "Artist standing in cinematic golden light" [ref=e16]
+      - generic [ref=e18]:
+        - paragraph [ref=e19]: Creative Artist • Posters • Film • Photography
+        - heading "Stories told in shadow, light, and atmosphere." [level=1] [ref=e20]
+        - paragraph [ref=e21]: A luxury cinematic portfolio exploring visual identity through striking poster design, emotionally rich film projects, and editorial photography with a nocturnal edge.
+        - generic [ref=e22]:
+          - link "View Film Work" [ref=e23] [cursor=pointer]:
+            - /url: "#film"
+          - link "Book a Project" [ref=e24] [cursor=pointer]:
+            - /url: "#contact"
+      - link "Scroll to posters" [ref=e25] [cursor=pointer]:
+        - /url: "#posters"
+        - generic [ref=e26]: Scroll
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - paragraph [ref=e29]: Selected Vision
+        - heading "Visual worlds built for galleries, screens, and campaigns." [level=2] [ref=e30]
+      - generic [ref=e31]:
+        - article [ref=e32]:
+          - strong [ref=e33]: "18"
+          - text: Festival selections
+        - article [ref=e34]:
+          - strong [ref=e35]: "42"
+          - text: Editorial posters
+        - article [ref=e36]:
+          - strong [ref=e37]: "9"
+          - text: Countries exhibited
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - paragraph [ref=e40]: Posters
+        - heading "Bold compositions with the gravity of cinema." [level=2] [ref=e41]
+        - paragraph [ref=e42]: A poster collection designed to feel tactile, dramatic, and instantly memorable across print, launch campaigns, and collector editions.
+      - generic [ref=e43]:
+        - article [ref=e44]:
+          - img "Poster artwork with moody portrait lighting" [ref=e45]
+          - generic [ref=e46]:
+            - paragraph [ref=e47]: Campaign Poster
+            - heading "Velvet Hours" [level=3] [ref=e48]
+            - paragraph [ref=e49]: A midnight portrait study framed with gilded typography and theatrical contrast.
+        - article [ref=e50]:
+          - img "Abstract poster featuring red and black motion" [ref=e51]
+          - generic [ref=e52]:
+            - paragraph [ref=e53]: Limited Edition
+            - heading "Crimson Static" [level=3] [ref=e54]
+            - paragraph [ref=e55]: High-drama artwork balancing motion blur, grain, and luxe minimalism.
+        - article [ref=e56]:
+          - img "Poster style image of city lights at night" [ref=e57]
+          - generic [ref=e58]:
+            - paragraph [ref=e59]: Art Print
+            - heading "Glass Horizon" [level=3] [ref=e60]
+            - paragraph [ref=e61]: Urban reflections rendered into a collector-ready cinematic statement.
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - paragraph [ref=e64]: Film
+        - heading "Moving image pieces shaped by rhythm, stillness, and mood." [level=2] [ref=e65]
+        - paragraph [ref=e66]: Narrative shorts, fashion films, and visual essays centered on mood, restraint, and unforgettable frames.
+      - generic [ref=e67]:
+        - article [ref=e68]:
+          - img "Film still with dramatic lighting on a set" [ref=e70]
+          - generic [ref=e71]:
+            - paragraph [ref=e72]: Featured Film
+            - heading "After the Applause" [level=3] [ref=e73]
+            - paragraph [ref=e74]: A meditative short film about performance, silence, and the private rituals that exist just beyond the spotlight.
+            - list [ref=e75]:
+              - listitem [ref=e76]: Direction / Cinematography
+              - listitem [ref=e77]: "Official Selection: Noir Frame Festival"
+              - listitem [ref=e78]: Shot on location in Paris and New York
+        - generic [ref=e79]:
+          - article [ref=e80]:
+            - generic [ref=e81]: "01"
+            - heading "Moonlit Archive" [level=3] [ref=e82]
+            - paragraph [ref=e83]: Visual essay exploring memory through layered textures and archival sound.
+          - article [ref=e84]:
+            - generic [ref=e85]: "02"
+            - heading "Ember Dress" [level=3] [ref=e86]
+            - paragraph [ref=e87]: Fashion short built around sculptural silhouettes, firelight, and breath.
+          - article [ref=e88]:
+            - generic [ref=e89]: "03"
+            - heading "Silent Gold" [level=3] [ref=e90]
+            - paragraph [ref=e91]: Luxury brand vignette blending slow motion portraiture with gallery-scale staging.
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - paragraph [ref=e94]: Photography
+        - heading "Photography with editorial restraint and cinematic depth." [level=2] [ref=e95]
+        - paragraph [ref=e96]: Intimate portraiture, architectural quiet, and still images that feel like frames from a larger story.
+      - generic [ref=e97]:
+        - figure [ref=e98]:
+          - img "Night scene with cinematic red lighting" [ref=e99]
+        - figure [ref=e100]:
+          - img "Editorial portrait in dramatic black styling" [ref=e101]
+        - figure [ref=e102]:
+          - img "Fashion portrait with subdued tones" [ref=e103]
+        - figure [ref=e104]:
+          - img "Portrait in golden atmospheric light" [ref=e105]
+        - figure [ref=e106]:
+          - img "Architectural interior with cinematic shadows" [ref=e107]
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - paragraph [ref=e111]: About
+        - heading "Creating immersive visual language for modern culture." [level=2] [ref=e112]
+        - paragraph [ref=e113]: Grace Beck is a multidisciplinary creative artist working across film direction, poster design, and photography. Her work lives at the intersection of elegance and tension, pairing classical visual references with contemporary emotional storytelling.
+        - paragraph [ref=e114]: From campaign imagery to short-form cinema, every project is built to feel considered, cinematic, and unmistakably atmospheric.
+      - paragraph [ref=e116]: “I design images that feel like remembered scenes rather than simple compositions.”
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - paragraph [ref=e120]: Contact
+        - heading "Available for commissions, campaigns, and visual collaborations." [level=2] [ref=e121]
+        - paragraph [ref=e122]: For poster series, branded films, editorials, exhibitions, or private commissions, let’s create work with presence and precision.
+      - generic [ref=e123]:
+        - link "Email hello@gracebeck.com" [ref=e124] [cursor=pointer]:
+          - /url: mailto:hello@gracebeck.com
+          - generic [ref=e125]: Email
+          - strong [ref=e126]: hello@gracebeck.com
+        - link "Instagram @gracebeck.studio" [ref=e127] [cursor=pointer]:
+          - /url: https://www.instagram.com/
+          - generic [ref=e128]: Instagram
+          - strong [ref=e129]: "@gracebeck.studio"
+        - link "Vimeo View selected motion work" [ref=e130] [cursor=pointer]:
+          - /url: https://vimeo.com/
+          - generic [ref=e131]: Vimeo
+          - strong [ref=e132]: View selected motion work
