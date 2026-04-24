@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { Reveal, ScaleIn } from "@/components/ui/reveal";
 
-export function PhotographyGalleryContent({ content }) {
+export function GalleryPageContent({ content }) {
   return (
     <>
       <section className="soft-panel-strong overflow-hidden rounded-[38px] px-5 py-6 sm:px-8 sm:py-8">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_260px]">
           <div>
             <Reveal>
-              <h1 className="font-display mt-4 text-4xl leading-[1.05] text-[var(--foreground-strong)] sm:text-5xl lg:text-[4.15rem]">
+              <h1 className="font-display text-4xl leading-[1.05] text-[var(--foreground-strong)] sm:text-5xl lg:text-[4.15rem]">
                 {content.title}
               </h1>
             </Reveal>
@@ -19,8 +19,9 @@ export function PhotographyGalleryContent({ content }) {
               <Image
                 src={content.icon}
                 alt={content.iconAlt}
-                width={888}
-                height={944}
+                width={900}
+                height={900}
+                priority
                 className="h-auto w-full rounded-[24px] object-cover"
               />
             </div>

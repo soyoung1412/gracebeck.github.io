@@ -1,6 +1,6 @@
-import { CategoryPageContent } from "@/components/cute-portfolio/category-page-content";
+import { GalleryPageContent } from "@/components/cute-portfolio/gallery-page-content";
 import { PortfolioShell } from "@/components/cute-portfolio/portfolio-shell";
-import { artPage, artRail } from "@/lib/portfolio-content";
+import { artPage } from "@/lib/portfolio-content";
 
 export const metadata = {
   title: "Art | Grace Beck"
@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function ArtPage() {
   return (
-    <PortfolioShell searchPlaceholder={artPage.searchPlaceholder} rail={artRail}>
-      <CategoryPageContent content={artPage} />
+    <PortfolioShell>
+      <GalleryPageContent content={artPage} />
     </PortfolioShell>
   );
 }
