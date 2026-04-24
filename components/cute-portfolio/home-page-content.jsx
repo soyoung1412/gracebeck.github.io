@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRightIcon } from "@/components/cute-portfolio/icons";
 import { PageHero } from "@/components/cute-portfolio/page-hero";
 import { ProjectCard } from "@/components/cute-portfolio/project-card";
 import { Reveal } from "@/components/ui/reveal";
@@ -9,39 +7,6 @@ export function HomePageContent({ content }) {
   return (
     <>
       <PageHero content={content.hero} />
-
-      <Reveal delay={0.12} className="relative z-10 mx-auto flex justify-center lg:-mt-10 lg:justify-end">
-        <Link
-          href={content.posterSpotlight.href}
-          className="floating-c group relative flex w-full max-w-[420px] items-center gap-4 overflow-hidden rounded-[32px] border border-white/90 bg-[linear-gradient(135deg,rgba(255,233,242,0.98),rgba(255,255,255,0.94))] p-3 shadow-[0_26px_56px_rgba(236,168,197,0.24)] transition hover:-translate-y-1 sm:p-4"
-        >
-          <div className="pointer-events-none absolute -left-8 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,197,219,0.78),_rgba(255,197,219,0)_72%)] blur-2xl" />
-          <div className="relative shrink-0 overflow-hidden rounded-[26px] border border-white/90 bg-white/92 p-2 shadow-[0_14px_28px_rgba(234,175,199,0.18)]">
-            <Image
-              src={content.posterSpotlight.image}
-              alt={content.posterSpotlight.imageAlt}
-              width={896}
-              height={1195}
-              className="h-[116px] w-[96px] object-contain sm:h-[142px] sm:w-[118px]"
-            />
-          </div>
-          <div className="relative min-w-0">
-            <p className="text-xs font-black uppercase tracking-[0.26em] text-[#d27b9c]">
-              {content.posterSpotlight.eyebrow}
-            </p>
-            <h2 className="font-display mt-2 text-3xl font-black leading-none text-[var(--foreground-strong)] sm:text-[2.1rem]">
-              {content.posterSpotlight.title}
-            </h2>
-            <p className="mt-2 max-w-xs text-sm leading-6 text-[#7c6571]">
-              {content.posterSpotlight.copy}
-            </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-black text-[#c86f94]">
-              Open page
-              <ArrowRightIcon className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </span>
-          </div>
-        </Link>
-      </Reveal>
 
       <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
         <section className="grid gap-6">

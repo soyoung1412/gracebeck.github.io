@@ -3,7 +3,7 @@ import { PortfolioShell } from "@/components/cute-portfolio/portfolio-shell";
 import { graphicDesignPage, graphicDesignRail } from "@/lib/portfolio-content";
 
 export const metadata = {
-  title: "Posters | Grace Beck"
+  title: "Poster Works | Grace Beck"
 };
 
 export default function PostersPage() {
