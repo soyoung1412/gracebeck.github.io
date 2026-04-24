@@ -5,20 +5,20 @@ export function HomeLandingContent({ content }) {
   return (
     <>
       <section className="soft-panel-strong overflow-hidden rounded-[38px] px-5 py-6 sm:px-8 sm:py-8">
-        <div className="grid items-center gap-8 lg:grid-cols-[340px,1fr]">
-          <Reveal className="overflow-hidden rounded-[32px] border border-white/90 bg-white/90 p-3 shadow-[0_24px_48px_rgba(236,168,197,0.16)]">
+        <div className="mx-auto grid max-w-[860px] gap-6 sm:gap-8">
+          <Reveal className="mx-auto w-full max-w-[220px] overflow-hidden rounded-[28px] border border-white/90 bg-white/90 p-2.5 shadow-[0_20px_40px_rgba(236,168,197,0.14)] sm:max-w-[240px]">
             <img
               src={content.image}
               alt={content.imageAlt}
               loading="eager"
-              className="block w-full rounded-[24px] object-cover"
+              className="block aspect-[2/3] w-full rounded-[22px] object-cover"
             />
           </Reveal>
 
-          <div className="grid gap-4">
+          <div className="grid gap-5">
             {content.intro.map((paragraph, index) => (
               <Reveal key={paragraph} delay={0.05 * index}>
-                <p className="text-base leading-8 text-[var(--foreground-strong)] sm:text-lg">
+                <p className="text-base leading-8 text-[var(--foreground-strong)] sm:text-[1.08rem] sm:leading-9">
                   {paragraph}
                 </p>
               </Reveal>

@@ -15,27 +15,27 @@ export function PosterWorksContent({ content }) {
         </Reveal>
       </section>
 
-      <div className="grid gap-6">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {content.entries.map((entry, index) => (
-          <Reveal key={entry.title} delay={0.04 * index} className="soft-panel rounded-[34px] p-4 sm:p-6">
-            <article className="grid items-start gap-6 lg:grid-cols-[minmax(0,380px),1fr]">
+          <Reveal key={entry.title} delay={0.04 * index} className="soft-panel rounded-[34px] p-4 sm:p-5">
+            <article className="flex h-full flex-col gap-5">
               <div className="overflow-hidden rounded-[30px] border border-white/90 bg-white/92 p-3 shadow-[0_20px_38px_rgba(234,175,199,0.16)]">
                 <img
                   src={entry.image}
                   alt={entry.imageAlt}
                   loading={index === 0 ? "eager" : "lazy"}
-                  className="block w-full rounded-[24px] object-cover"
+                  className="block w-full rounded-[24px] object-contain"
                 />
               </div>
 
-              <div>
+              <div className="flex h-full flex-col">
                 <p className="text-xs font-black uppercase tracking-[0.26em] text-[#d27b9c]">
                   {entry.eyebrow}
                 </p>
-                <h2 className="font-display mt-3 text-3xl font-black text-[var(--foreground-strong)]">
+                <h2 className="font-display mt-3 text-2xl font-black text-[var(--foreground-strong)] sm:text-3xl">
                   {entry.title}
                 </h2>
-                <p className="mt-4 text-sm leading-8 text-[var(--foreground-strong)] sm:text-base">
+                <p className="mt-4 text-sm leading-7 text-[var(--foreground-strong)] sm:text-base">
                   {entry.description}
                 </p>
               </div>
