@@ -2,12 +2,12 @@
 
 /* Easy-to-edit tokens for the portfolio mood. */
 :root {
-  --background: #f7fffd;
+  --background: #fff8fc;
   --foreground: #24405f;
   --muted: #64748b;
-  --mint: #c8f7ee;
-  --aqua: #d8f1ff;
-  --sky: #dfe4ff;
+  --mint: #ffe1ef;
+  --aqua: #ffeaf5;
+  --sky: #f3e6ff;
   --peach: #ffe7db;
   --rose: #ffe8f5;
   --border: rgba(255, 255, 255, 0.78);
@@ -31,10 +31,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(200, 247, 238, 0.95), transparent 30%),
-    radial-gradient(circle at top right, rgba(216, 241, 255, 0.82), transparent 26%),
-    radial-gradient(circle at 30% 80%, rgba(255, 232, 245, 0.76), transparent 28%),
-    linear-gradient(180deg, #fbffff 0%, #f6fbff 48%, #fefcff 100%);
+    radial-gradient(circle at top left, rgba(255, 226, 239, 0.92), transparent 30%),
+    radial-gradient(circle at top right, rgba(252, 237, 247, 0.9), transparent 26%),
+    radial-gradient(circle at 30% 80%, rgba(243, 230, 255, 0.7), transparent 28%),
+    linear-gradient(180deg, #fffcfe 0%, #fff7fb 48%, #fef8ff 100%);
 }
 
 body::before,
@@ -146,6 +146,38 @@ input {
 
 .floating-c {
   animation: floatC 9s ease-in-out infinite;
+}
+
+.cute-sidebar {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 241, 249, 0.86)),
+    var(--panel);
+}
+
+.cute-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.72rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #835270;
+  box-shadow: 0 12px 26px rgba(201, 145, 176, 0.18);
+  transition: all 220ms ease;
+}
+
+.cute-nav-link:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 231, 244, 0.88);
+}
+
+.cute-nav-link-active {
+  background: linear-gradient(90deg, rgba(255, 205, 229, 0.95), rgba(255, 222, 239, 0.95));
+  color: #944f78;
+  box-shadow: 0 14px 28px rgba(213, 130, 168, 0.28);
 }
 
 @keyframes floatA {
