@@ -30,32 +30,36 @@ export function AboutPageContent({ content }) {
             <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg">
               {content.copy}
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {content.tags.map((tag) => (
-                <span key={tag} className="candy-pill px-4 py-2 text-sm font-black text-[#715966]">
-                  {tag}
-                </span>
-              ))}
-            </div>
+            {content.tags?.length ? (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {content.tags.map((tag) => (
+                  <span key={tag} className="candy-pill px-4 py-2 text-sm font-black text-[#715966]">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            ) : null}
           </Reveal>
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
-        {content.notes.map((item, index) => (
-          <Reveal
-            key={item.title}
-            delay={0.05 * index}
-            className={`soft-panel rounded-[30px] bg-gradient-to-br ${item.gradient} p-5 sm:p-6`}
-          >
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#d27b9c]">{item.eyebrow}</p>
-            <h2 className="font-display mt-3 text-2xl font-black text-[var(--foreground-strong)]">
-              {item.title}
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-[#7d6672]">{item.copy}</p>
-          </Reveal>
-        ))}
-      </div>
+      {content.notes?.length ? (
+        <div className="grid gap-6 md:grid-cols-3">
+          {content.notes.map((item, index) => (
+            <Reveal
+              key={item.title}
+              delay={0.05 * index}
+              className={`soft-panel rounded-[30px] bg-gradient-to-br ${item.gradient} p-5 sm:p-6`}
+            >
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-[#d27b9c]">{item.eyebrow}</p>
+              <h2 className="font-display mt-3 text-2xl font-black text-[var(--foreground-strong)]">
+                {item.title}
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-[#7d6672]">{item.copy}</p>
+            </Reveal>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
