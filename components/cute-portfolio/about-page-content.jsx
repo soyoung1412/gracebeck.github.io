@@ -1,48 +1,36 @@
 import Image from "next/image";
 import { Reveal, ScaleIn } from "@/components/ui/reveal";
+import { WindowFrame } from "@/components/cute-portfolio/window-frame";
 import { withBasePath } from "@/lib/site-path";
 
 export function AboutPageContent({ content }) {
   return (
     <div className="grid gap-6">
-      <div className="soft-panel-strong rounded-[36px] p-5 sm:p-8">
+      <WindowFrame title="about_grace.txt">
         <div className="grid items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
           <ScaleIn className="relative">
-            <div className="absolute -left-3 top-6 h-28 w-28 rounded-full bg-[radial-gradient(circle,_rgba(255,203,223,0.92),_rgba(255,203,223,0)_72%)] blur-3xl" />
-            <div className="relative overflow-hidden rounded-[32px] border border-white/90 bg-white/86 p-3 shadow-[0_24px_56px_rgba(234,175,199,0.2)]">
-              <div className="overflow-hidden rounded-[26px]">
-                <Image
-                  src={withBasePath(content.image)}
-                  alt={content.imageAlt}
-                  width={900}
-                  height={1200}
-                  priority
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            <div className="relative overflow-hidden border-2 border-[var(--line-strong)] bg-white p-3 shadow-[var(--shadow-soft)]">
+              <Image
+                src={withBasePath(content.image)}
+                alt={content.imageAlt}
+                width={900}
+                height={1200}
+                priority
+                className="h-full w-full object-cover"
+              />
             </div>
           </ScaleIn>
 
           <Reveal>
-            <p className="text-xs font-black uppercase tracking-[0.34em] text-[#d27b9c]">{content.eyebrow}</p>
-            <h1 className="font-display mt-4 text-4xl font-black leading-[1.06] text-[var(--foreground-strong)] sm:text-5xl">
+            <h1 className="font-display text-4xl font-black uppercase tracking-[0.12em] text-[var(--foreground-strong)] sm:text-5xl">
               {content.title}
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--foreground-strong)] sm:text-lg">
               {content.copy}
             </p>
-            {content.tags?.length ? (
-              <div className="mt-6 flex flex-wrap gap-3">
-                {content.tags.map((tag) => (
-                  <span key={tag} className="candy-pill px-4 py-2 text-sm font-black text-[#715966]">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            ) : null}
           </Reveal>
         </div>
-      </div>
+      </WindowFrame>
 
       {content.notes?.length ? (
         <div className="grid gap-6 md:grid-cols-3">

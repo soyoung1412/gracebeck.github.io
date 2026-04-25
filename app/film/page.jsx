@@ -1,6 +1,5 @@
-import { CategoryPageContent } from "@/components/cute-portfolio/category-page-content";
 import { PortfolioShell } from "@/components/cute-portfolio/portfolio-shell";
-import { filmPage, filmRail } from "@/lib/portfolio-content";
+import { WindowFrame } from "@/components/cute-portfolio/window-frame";
 
 export const metadata = {
   title: "Film | Grace Beck"
@@ -8,8 +7,8 @@ export const metadata = {
 
 export default function FilmPage() {
   return (
-    <PortfolioShell searchPlaceholder={filmPage.searchPlaceholder} rail={filmRail}>
-      <CategoryPageContent content={filmPage} />
+    <PortfolioShell showFooter={false}>
+      <WindowFrame title="film.exe" bodyClassName="min-h-[55vh]" />
     </PortfolioShell>
   );
 }
