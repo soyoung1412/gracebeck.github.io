@@ -47,32 +47,21 @@ export function GalleryPageContent({ content }) {
           </div>
         </Reveal>
 
-        <div className="grid gap-5">
-          <Reveal className="paper-card paper-card--ink p-5 sm:p-6">
-            <p className="font-display text-xs font-black uppercase tracking-[0.2em] text-[#ffd0e7]">
-              mood note
-            </p>
-            <p className="mt-3 text-sm leading-7 text-[#f6e6f0] sm:text-base">
-              {content.accent}
-            </p>
-          </Reveal>
-
-          <ScaleIn className="handmade-card mx-auto w-full max-w-[280px] xl:ml-auto xl:mr-0">
-            <div className="relative">
-              <div className="absolute inset-0 translate-x-3 translate-y-3 border-2 border-[#e4c5da]" />
-              <div className="relative overflow-hidden border-2 border-[var(--line-strong)] bg-white p-3 shadow-[var(--shadow)]">
-                <Image
-                  src={withBasePath(content.icon)}
-                  alt={content.iconAlt}
-                  width={900}
-                  height={900}
-                  priority
-                  className="h-auto w-full object-cover"
-                />
-              </div>
+        <ScaleIn className="handmade-card mx-auto w-full max-w-[280px] xl:ml-auto xl:mr-0 xl:mt-8">
+          <div className="relative">
+            <div className="absolute inset-0 translate-x-3 translate-y-3 border-2 border-[#e4c5da]" />
+            <div className="relative overflow-hidden border-2 border-[var(--line-strong)] bg-white p-3 shadow-[var(--shadow)]">
+              <Image
+                src={withBasePath(content.icon)}
+                alt={content.iconAlt}
+                width={900}
+                height={900}
+                priority
+                className="h-auto w-full object-cover"
+              />
             </div>
-          </ScaleIn>
-        </div>
+          </div>
+        </ScaleIn>
       </section>
 
       <div className="masonry-flow">
