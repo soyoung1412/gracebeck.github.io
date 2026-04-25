@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal, ScaleIn } from "@/components/ui/reveal";
 
 export function GalleryPageContent({ content }) {
@@ -33,15 +34,23 @@ export function GalleryPageContent({ content }) {
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3">
           {content.photos.map((photo, index) => (
             <figure
-              key={photo.src}
+              key={photo.slug ?? photo.src}
               className="mb-4 break-inside-avoid overflow-hidden rounded-[28px] border border-white/90 bg-white/92 p-2 shadow-[0_18px_36px_rgba(234,175,199,0.14)]"
             >
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                loading={index < 4 ? "eager" : "lazy"}
-                className="block w-full rounded-[22px] object-cover"
-              />
+              <Link
+                href={photo.slug ? `/art/${photo.slug}` : photo.src}
+                className="group block"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading={index < 4 ? "eager" : "lazy"}
+                  className="block w-full rounded-[22px] transition duration-200 group-hover:scale-[1.01]"
+                />
+                <figcaption className="px-2 pb-1 pt-3 text-xs font-black uppercase tracking-[0.22em] text-[#c9829f]">
+                  Open Full Art
+                </figcaption>
+              </Link>
             </figure>
           ))}
         </div>
