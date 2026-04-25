@@ -1,23 +1,66 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal, ScaleIn } from "@/components/ui/reveal";
-import { WindowFrame } from "@/components/cute-portfolio/window-frame";
 import { withBasePath } from "@/lib/site-path";
+
+const masonryVariants = [
+  {
+    key: "plain",
+    cardClass: "masonry-card sm:translate-y-0",
+    frameClass: "masonry-frame masonry-frame--plain p-3"
+  },
+  {
+    key: "paper",
+    cardClass: "masonry-card sm:translate-y-6",
+    frameClass: "masonry-frame masonry-frame--paper p-4"
+  },
+  {
+    key: "ink",
+    cardClass: "masonry-card sm:-translate-y-2",
+    frameClass: "masonry-frame masonry-frame--ink p-3"
+  },
+  {
+    key: "airy",
+    cardClass: "masonry-card sm:translate-y-10",
+    frameClass: "masonry-frame masonry-frame--airy p-0"
+  }
+];
 
 export function GalleryPageContent({ content }) {
   return (
     <>
-      <Reveal>
-        <WindowFrame title={`${content.title.toLowerCase()}.exe`}>
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_260px]">
-            <div>
-              <h1 className="font-display text-4xl leading-[1.05] uppercase tracking-[0.12em] text-[var(--foreground-strong)] sm:text-5xl lg:text-[4.15rem]">
-                {content.title}
-              </h1>
-            </div>
+      <section className="grid gap-6 xl:grid-cols-[1.06fr_0.94fr] xl:items-start">
+        <Reveal className="relative pt-12">
+          <div className="absolute left-0 top-0 sticker-tag -rotate-[3deg]">{content.eyebrow}</div>
+          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.08] text-[var(--foreground-strong)] sm:text-5xl lg:text-[4.3rem]">
+            {content.title}
+          </h1>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--foreground-strong)] sm:text-lg">
+            {content.intro}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {content.tags?.map((tag) => (
+              <span key={tag} className="sticker-tag bg-white text-[0.68rem] text-[#7a5e8a]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </Reveal>
 
-            <ScaleIn className="mx-auto w-full max-w-[220px]">
-              <div className="overflow-hidden border-2 border-[var(--line-strong)] bg-white p-3 shadow-[var(--shadow-soft)]">
+        <div className="grid gap-5">
+          <Reveal className="paper-card paper-card--ink p-5 sm:p-6">
+            <p className="font-display text-xs font-black uppercase tracking-[0.2em] text-[#ffd0e7]">
+              mood note
+            </p>
+            <p className="mt-3 text-sm leading-7 text-[#f6e6f0] sm:text-base">
+              {content.accent}
+            </p>
+          </Reveal>
+
+          <ScaleIn className="handmade-card mx-auto w-full max-w-[280px] xl:ml-auto xl:mr-0">
+            <div className="relative">
+              <div className="absolute inset-0 translate-x-3 translate-y-3 border-2 border-[#e4c5da]" />
+              <div className="relative overflow-hidden border-2 border-[var(--line-strong)] bg-white p-3 shadow-[var(--shadow)]">
                 <Image
                   src={withBasePath(content.icon)}
                   alt={content.iconAlt}
@@ -27,38 +70,44 @@ export function GalleryPageContent({ content }) {
                   className="h-auto w-full object-cover"
                 />
               </div>
-            </ScaleIn>
-          </div>
-        </WindowFrame>
-      </Reveal>
+            </div>
+          </ScaleIn>
+        </div>
+      </section>
 
-      <Reveal>
-        <WindowFrame title="gallery.view" bodyClassName="p-3 sm:p-4">
-          <div className="columns-1 gap-4 sm:columns-2 xl:columns-3">
-            {content.photos.map((photo, index) => (
-              <figure
-                key={photo.slug ?? photo.src}
-                className="mb-4 break-inside-avoid overflow-hidden border-2 border-[var(--line-strong)] bg-white p-2 shadow-[var(--shadow-soft)]"
+      <div className="masonry-flow">
+        {content.photos.map((photo, index) => {
+          const variant = masonryVariants[index % masonryVariants.length];
+          const href = photo.slug ? `/art/${photo.slug}` : withBasePath(photo.src);
+
+          return (
+            <figure
+              key={photo.slug ?? photo.src}
+              className={variant.cardClass}
+              data-variant={variant.key}
+            >
+              <Link
+                href={href}
+                target={photo.slug ? undefined : "_blank"}
+                rel={photo.slug ? undefined : "noreferrer"}
+                className="group block"
               >
-                <Link
-                  href={photo.slug ? `/art/${photo.slug}` : withBasePath(photo.src)}
-                  className="group block"
-                >
-                  <img
-                    src={withBasePath(photo.src)}
-                    alt={photo.alt}
-                    loading={index < 4 ? "eager" : "lazy"}
-                    className="block w-full transition duration-200 group-hover:scale-[1.01]"
-                  />
-                  <figcaption className="px-2 pb-1 pt-3 font-display text-xs font-black uppercase tracking-[0.18em] text-[#c9829f]">
-                    Open Full View
-                  </figcaption>
-                </Link>
-              </figure>
-            ))}
-          </div>
-        </WindowFrame>
-      </Reveal>
+                <div className={variant.frameClass}>
+                  <div className="masonry-image-wrap">
+                    <img
+                      src={withBasePath(photo.src)}
+                      alt={photo.alt}
+                      loading={index < 4 ? "eager" : "lazy"}
+                      className="masonry-image"
+                    />
+                  </div>
+                  <figcaption className="masonry-caption">Open Full View</figcaption>
+                </div>
+              </Link>
+            </figure>
+          );
+        })}
+      </div>
     </>
   );
 }
