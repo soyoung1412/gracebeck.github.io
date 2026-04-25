@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/components/cute-portfolio/icons";
 import { Reveal } from "@/components/ui/reveal";
+import { withBasePath } from "@/lib/site-path";
 
 function PreviewScene({ project }) {
   if (project.image) {
@@ -9,7 +10,7 @@ function PreviewScene({ project }) {
       <div className={`relative overflow-hidden rounded-[28px] bg-gradient-to-br ${project.previewGradient} p-3`}>
         <div className="overflow-hidden rounded-[22px] border border-white/85 bg-white/84 shadow-[0_18px_36px_rgba(234,175,199,0.16)]">
           <Image
-            src={project.image}
+            src={withBasePath(project.image)}
             alt={project.imageAlt}
             width={720}
             height={900}

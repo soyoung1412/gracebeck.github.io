@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal, ScaleIn } from "@/components/ui/reveal";
+import { withBasePath } from "@/lib/site-path";
 
 export function GalleryPageContent({ content }) {
   return (
@@ -18,7 +19,7 @@ export function GalleryPageContent({ content }) {
           <ScaleIn className="mx-auto w-full max-w-[220px]">
             <div className="overflow-hidden rounded-[32px] border border-white/90 bg-white/90 p-3 shadow-[0_24px_48px_rgba(236,168,197,0.16)]">
               <Image
-                src={content.icon}
+                src={withBasePath(content.icon)}
                 alt={content.iconAlt}
                 width={900}
                 height={900}
@@ -42,7 +43,7 @@ export function GalleryPageContent({ content }) {
                 className="group block"
               >
                 <img
-                  src={photo.src}
+                  src={withBasePath(photo.src)}
                   alt={photo.alt}
                   loading={index < 4 ? "eager" : "lazy"}
                   className="block w-full rounded-[22px] transition duration-200 group-hover:scale-[1.01]"

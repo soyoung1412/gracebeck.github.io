@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/ui/reveal";
+import { withBasePath } from "@/lib/site-path";
 
 export function PosterWorksContent({ content }) {
   return (
@@ -20,7 +21,7 @@ export function PosterWorksContent({ content }) {
             <Reveal className="mx-auto w-full max-w-[150px] lg:mx-0 lg:ml-auto lg:max-w-[180px]">
               <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white/90 p-2.5 shadow-[0_20px_40px_rgba(236,168,197,0.14)]">
                 <img
-                  src={content.headerIcon.image}
+                  src={withBasePath(content.headerIcon.image)}
                   alt={content.headerIcon.imageAlt}
                   loading="eager"
                   className="block w-full rounded-[22px] object-contain"
@@ -38,7 +39,7 @@ export function PosterWorksContent({ content }) {
               <article className="flex h-full flex-col gap-5">
                 <div className="overflow-hidden rounded-[30px] border border-white/90 bg-white/92 p-3 shadow-[0_20px_38px_rgba(234,175,199,0.16)]">
                   <img
-                    src={entry.image}
+                    src={withBasePath(entry.image)}
                     alt={entry.imageAlt}
                     loading={index === 0 ? "eager" : "lazy"}
                     className="block w-full rounded-[24px] object-contain transition duration-200 group-hover:scale-[1.01]"

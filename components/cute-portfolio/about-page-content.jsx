@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal, ScaleIn } from "@/components/ui/reveal";
+import { withBasePath } from "@/lib/site-path";
 
 export function AboutPageContent({ content }) {
   return (
@@ -11,7 +12,7 @@ export function AboutPageContent({ content }) {
             <div className="relative overflow-hidden rounded-[32px] border border-white/90 bg-white/86 p-3 shadow-[0_24px_56px_rgba(234,175,199,0.2)]">
               <div className="overflow-hidden rounded-[26px]">
                 <Image
-                  src={content.image}
+                  src={withBasePath(content.image)}
                   alt={content.imageAlt}
                   width={900}
                   height={1200}

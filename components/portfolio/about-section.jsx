@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal, ScaleIn } from "@/components/ui/reveal";
+import { withBasePath } from "@/lib/site-path";
 
 export function AboutSection({ content }) {
   return (
@@ -13,7 +14,7 @@ export function AboutSection({ content }) {
             <div className="relative overflow-hidden rounded-[30px] border border-white/85 bg-white/72 p-3 shadow-[0_28px_65px_rgba(102,131,165,0.16)] sm:p-4">
               <div className="relative overflow-hidden rounded-[24px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.75),_rgba(244,249,255,0.88))]">
                 <Image
-                  src={content.image.src}
+                  src={withBasePath(content.image.src)}
                   alt={content.image.alt}
                   width={900}
                   height={1125}

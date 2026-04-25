@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRightIcon, SparkleIcon } from "@/components/cute-portfolio/icons";
 import { railProfile } from "@/lib/portfolio-content";
+import { withBasePath } from "@/lib/site-path";
 
 export function RightRail({ rail }) {
   return (
@@ -10,7 +11,7 @@ export function RightRail({ rail }) {
         <div className="flex items-start gap-4">
           <div className="overflow-hidden rounded-[22px] border border-white/90 bg-white/90 shadow-[0_14px_32px_rgba(234,175,199,0.18)]">
             <Image
-              src={railProfile.image}
+              src={withBasePath(railProfile.image)}
               alt={railProfile.alt}
               width={92}
               height={92}

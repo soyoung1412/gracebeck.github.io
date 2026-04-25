@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRightIcon, SparkleIcon } from "@/components/cute-portfolio/icons";
 import { Reveal, ScaleIn } from "@/components/ui/reveal";
+import { withBasePath } from "@/lib/site-path";
 
 function HeroVisual({ visual }) {
   return (
@@ -19,7 +20,7 @@ function HeroVisual({ visual }) {
           <div className="relative ml-auto mt-6 w-full max-w-[280px] overflow-hidden rounded-[28px] border border-white/85 bg-white/82 p-3 shadow-[0_20px_38px_rgba(234,175,199,0.18)]">
             <div className="overflow-hidden rounded-[22px]">
               <Image
-                src={visual.image}
+                src={withBasePath(visual.image)}
                 alt={visual.imageAlt}
                 width={720}
                 height={900}

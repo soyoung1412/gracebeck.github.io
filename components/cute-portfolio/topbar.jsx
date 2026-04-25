@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { InstagramIcon, MenuIcon } from "@/components/cute-portfolio/icons";
 import { mainNavigation, posterBadge, socialProfile } from "@/lib/portfolio-content";
+import { withBasePath } from "@/lib/site-path";
 
 export function Topbar({ onMenu }) {
   const pathname = usePathname();
@@ -40,7 +41,7 @@ export function Topbar({ onMenu }) {
             <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_left,_rgba(255,204,223,0.55),_rgba(255,204,223,0)_58%)] opacity-0 transition group-hover:opacity-100" />
             <div className="relative overflow-hidden rounded-full border border-white/90 bg-white/96 p-1">
               <Image
-                src={posterBadge.image}
+                src={withBasePath(posterBadge.image)}
                 alt={posterBadge.imageAlt}
                 width={896}
                 height={1195}

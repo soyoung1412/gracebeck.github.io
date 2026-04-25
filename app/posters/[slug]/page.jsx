@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PortfolioShell } from "@/components/cute-portfolio/portfolio-shell";
 import { Reveal } from "@/components/ui/reveal";
 import { getPosterWorkBySlug, posterWorksPage } from "@/lib/portfolio-content";
+import { withBasePath } from "@/lib/site-path";
 
 export function generateStaticParams() {
   return posterWorksPage.entries.map((entry) => ({
@@ -52,7 +53,7 @@ export default async function PosterDetailPage({ params }) {
       <Reveal className="soft-panel rounded-[34px] p-4 sm:p-6">
         <div className="overflow-hidden rounded-[30px] border border-white/90 bg-white/92 p-3 shadow-[0_20px_38px_rgba(234,175,199,0.16)]">
           <img
-            src={poster.image}
+            src={withBasePath(poster.image)}
             alt={poster.imageAlt}
             loading="eager"
             className="mx-auto block max-h-[85vh] w-full rounded-[24px] object-contain"

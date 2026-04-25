@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/ui/reveal";
+import { withBasePath } from "@/lib/site-path";
 
 export function HomeLandingContent({ content }) {
   return (
@@ -8,7 +9,7 @@ export function HomeLandingContent({ content }) {
         <div className="mx-auto grid max-w-[860px] gap-6 sm:gap-8">
           <Reveal className="mx-auto w-full max-w-[220px] overflow-hidden rounded-[28px] border border-white/90 bg-white/90 p-2.5 shadow-[0_20px_40px_rgba(236,168,197,0.14)] sm:max-w-[240px]">
             <img
-              src={content.image}
+              src={withBasePath(content.image)}
               alt={content.imageAlt}
               loading="eager"
               className="block aspect-[2/3] w-full rounded-[22px] object-cover"
@@ -32,7 +33,7 @@ export function HomeLandingContent({ content }) {
           <div className="grid items-center gap-6 md:grid-cols-[260px,1fr]">
             <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white/92 p-3 shadow-[0_20px_38px_rgba(234,175,199,0.16)]">
               <img
-                src={content.posterPreview.image}
+                src={withBasePath(content.posterPreview.image)}
                 alt={content.posterPreview.imageAlt}
                 loading="eager"
                 className="block w-full rounded-[22px] object-cover"
